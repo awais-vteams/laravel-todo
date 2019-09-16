@@ -12,13 +12,12 @@
             </div>
         </div>
         <div class="col-12" v-show="state.edit === true">
-            <div class="float-left col-9">
-                <input class="form-control col-12" v-model="data.title" @keyup.enter="updateTodo" placeholder="Update Todo">
+            <div class="float-left col-1">&nbsp;</div>
+            <div class="float-left col-8">
+                <input class="form-control col-12" v-model="data.title" @keyup.enter="updateTodo(data.is_complete)" placeholder="Update Todo">
             </div>
-            <div class="float-left col-1">
-                <button class="btn btn-primary btn-sm" @click="updateTodo" :disabled="data.title.length === 0">Update</button>
-            </div>
-            <div class="float-left col-1">
+            <div class="float-left col-3">
+                <button class="btn btn-primary btn-sm" @click="updateTodo(data.is_complete)" :disabled="data.title.length === 0">Update</button>
                 <button class="btn btn-sm btn-danger" @click="cancelEdit">Cancel</button>
             </div>
         </div>

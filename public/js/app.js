@@ -1961,7 +1961,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['todo', 'index'],
   data: function data() {
@@ -37514,7 +37513,9 @@ var render = function() {
         staticClass: "col-12"
       },
       [
-        _c("div", { staticClass: "float-left col-9" }, [
+        _c("div", { staticClass: "float-left col-1" }, [_vm._v(" ")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "float-left col-8" }, [
           _c("input", {
             directives: [
               {
@@ -37535,7 +37536,7 @@ var render = function() {
                 ) {
                   return null
                 }
-                return _vm.updateTodo($event)
+                return _vm.updateTodo(_vm.data.is_complete)
               },
               input: function($event) {
                 if ($event.target.composing) {
@@ -37547,19 +37548,21 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "float-left col-1" }, [
+        _c("div", { staticClass: "float-left col-3" }, [
           _c(
             "button",
             {
               staticClass: "btn btn-primary btn-sm",
               attrs: { disabled: _vm.data.title.length === 0 },
-              on: { click: _vm.updateTodo }
+              on: {
+                click: function($event) {
+                  return _vm.updateTodo(_vm.data.is_complete)
+                }
+              }
             },
             [_vm._v("Update")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "float-left col-1" }, [
+          ),
+          _vm._v(" "),
           _c(
             "button",
             {
